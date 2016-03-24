@@ -8,40 +8,47 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="candacelizelle.finalproject_candacejlizelles.MainActivity">
+    tools:context="candacelizelle.finalproject_candacejlizelles.LoginActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Key" />
+        android:text="E-mail" />
 
     <EditText
-        android:id="@+id/edit_text_key"
+        android:id="@+id/edit_text_email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Value" />
+        android:text="Password" />
 
     <EditText
-        android:id="@+id/edit_text_value"
+        android:id="@+id/edit_text_password"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="top" />
-
-    <Button
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="writeToCloud"
-        android:text="Write to Cloud" />
+        android:inputType="textPassword"
+        android:password="true" />
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="readFromCloud"
-        android:text="Read from Cloud" />
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="LogIn"
+            android:text="Log In" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="SignUp"
+            android:text="Sign Up" />
+    </LinearLayout>
 
 </LinearLayout>
