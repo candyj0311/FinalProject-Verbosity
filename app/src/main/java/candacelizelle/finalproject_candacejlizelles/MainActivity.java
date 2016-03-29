@@ -102,4 +102,9 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    public void goHome(View view) {
+        Intent intent = new Intent(MainActivity.this, Home.class);
+        startActivity(intent);
+    }
 }
