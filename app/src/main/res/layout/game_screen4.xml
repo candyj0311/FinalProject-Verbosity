@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Orange"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp" />
+
+    <ImageButton
+        android:id="@+id/topLeft"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/apple"
+        android:layout_below="@+id/word"
+        android:layout_margin="50dp"
+        android:layout_alignParentLeft="true" />
+
+    <ImageButton
+        android:id="@+id/topRight"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/apple"
+        android:layout_below="@+id/word"
+        android:layout_margin="50dp"
+        android:layout_alignParentRight="true" />
+
+    <ImageButton
+        android:id="@+id/bottomLeft"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/apple"
+        android:layout_below="@+id/topLeft"
+        android:layout_margin="50dp"
+        android:layout_alignParentLeft="true" />
+
+    <ImageButton
+        android:id="@+id/bottomRight"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/apple"
+        android:layout_below="@+id/topRight"
+        android:layout_margin="50dp"
+        android:layout_alignParentRight="true" />
+
+
+</RelativeLayout>
