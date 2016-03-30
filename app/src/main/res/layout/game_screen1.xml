@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- We need to figure out how/where to add audio so it plays when this button is clicked.-->
     <Button
         android:id="@+id/word"
         android:layout_width="wrap_content"
@@ -47,6 +48,5 @@
         android:layout_below="@+id/topRight"
         android:layout_margin="50dp"
         android:layout_alignParentRight="true" />
-
 
 </RelativeLayout>
