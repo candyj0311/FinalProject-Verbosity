@@ -1,4 +1,3 @@
-/*
 package candacelizelle.finalproject_candacejlizelles;
 
 import android.content.Intent;
@@ -108,4 +107,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, Home.class);
         startActivity(intent);
     }
-}*/
+}

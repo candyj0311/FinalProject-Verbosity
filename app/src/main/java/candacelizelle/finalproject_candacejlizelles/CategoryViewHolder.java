@@ -28,7 +28,7 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, CategoriesPage.class);
+                Intent intent = new Intent(context, Games.class);
                 intent.putExtra(BundleKey.NAME_KEY, category.categoryName);
                 intent.putExtra(BundleKey.PHOTO_KEY, category.photoId);
 
