@@ -9,7 +9,7 @@ public class Games extends AppCompatActivity {
     private String categoryName;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_screen1);
 
@@ -17,10 +17,9 @@ public class Games extends AppCompatActivity {
         categoryName = getIntent().getStringExtra(BundleKey.NAME_KEY);
         setTitle(categoryName);
 
-// Why is this so complex?
-//        if (categoryName.equals("Fruit")) {}
-    }
+// Get game content - which way do we want to do this? Xi says not to use Firebase
 
+    }
 
     public void showResults(View view) {
         Intent intent = new Intent(Games.this, Results.class);

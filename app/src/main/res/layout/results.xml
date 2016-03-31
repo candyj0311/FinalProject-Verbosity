@@ -29,15 +29,17 @@
         android:layout_above="@+id/button"
         android:layout_alignEnd="@+id/victorySticker"
         android:paddingBottom="15dp"
+        android:onClick="playAgain"
         android:text="Play Again" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/chooseAnotherGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:paddingBottom="15dp"
+        android:onClick="chooseAnotherGame"
         android:text="Choose Another Game" />
 
 </RelativeLayout>
