@@ -1,41 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/score"
+        style="@android:style/TextAppearance.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="40dp"
         android:text="You got [DISPLAY SCORE]!"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="25dp" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:id="@+id/victorySticker"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/victory"
-        android:layout_below="@+id/score"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:layout_centerVertical="true"
+        android:src="@drawable/victory" />
 
     <Button
         android:id="@+id/playAgain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play Again"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/victorySticker"
-        android:paddingBottom="15dp" />
+        android:layout_above="@+id/button"
+        android:layout_alignEnd="@+id/victorySticker"
+        android:paddingBottom="15dp"
+        android:text="Play Again" />
 
     <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose Another Game"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/playAgain"
-        android:paddingBottom="15dp" />
+        android:paddingBottom="15dp"
+        android:text="Choose Another Game" />
 
 </RelativeLayout>
