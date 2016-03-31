@@ -1,3 +1,4 @@
+/*
 package candacelizelle.finalproject_candacejlizelles;
 
 import android.os.Bundle;
@@ -63,4 +64,4 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-}
+}*/

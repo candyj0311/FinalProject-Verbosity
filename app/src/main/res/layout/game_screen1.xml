@@ -49,4 +49,12 @@
         android:layout_margin="50dp"
         android:layout_alignParentRight="true" />
 
+    <Button
+        android:id="@+id/resultsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go To Results"
+        android:layout_below="@id/bottomRight"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

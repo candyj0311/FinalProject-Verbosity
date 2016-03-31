@@ -20,7 +20,6 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".Home" />
         <activity android:name=".CategoriesPage">
-            <activity android:name=".GameScreen1"></activity>
         </activity>
     </application>
 

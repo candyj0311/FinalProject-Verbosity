@@ -1,7 +1,7 @@
 package candacelizelle.finalproject_candacejlizelles;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -28,8 +28,8 @@ public class CategoriesPage extends AppCompatActivity {
 
     private void initialData() {
         categories = new ArrayList<>();
-        categories.add(new Category("Fruit", "Food", R.drawable.gamesclass));
-        categories.add(new Category("Animals", "Part 1", R.drawable.gamesclass));
-        categories.add(new Category("Places", "Part 1", R.drawable.gamesclass));
+        categories.add(new Category("Fruit", R.drawable.gamesclass));
+        categories.add(new Category("Animals", R.drawable.gamesclass));
+        categories.add(new Category("Places", R.drawable.gamesclass));
     }
 }
