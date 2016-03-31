@@ -3,6 +3,7 @@ package candacelizelle.finalproject_candacejlizelles;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 public class Games extends AppCompatActivity {
     private String categoryName;
@@ -21,4 +22,8 @@ public class Games extends AppCompatActivity {
     }
 
 
+    public void showResults(View view) {
+        Intent intent = new Intent(Games.this, Results.class);
+        startActivity(intent);
+    }
 }
