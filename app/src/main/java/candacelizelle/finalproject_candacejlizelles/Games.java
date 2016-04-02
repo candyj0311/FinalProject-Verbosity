@@ -18,6 +18,7 @@ public class Games extends AppCompatActivity {
         setTitle(categoryName);
 
 // Get game content - which way do we want to do this? Xi says not to use Firebase
+        //We need to add a counter for the scoring
 
     }
 

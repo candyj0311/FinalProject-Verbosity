@@ -53,9 +53,9 @@
         android:id="@+id/resultsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="showResults"
         android:text="Go To Results"
         android:layout_below="@id/bottomRight"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="showResults" />
 
 </RelativeLayout>
