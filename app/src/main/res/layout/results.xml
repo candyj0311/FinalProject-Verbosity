@@ -9,10 +9,10 @@
         style="@android:style/TextAppearance.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="40dp"
-        android:text="You got [DISPLAY SCORE]!"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:paddingTop="40dp"
+        android:text="You got [DISPLAY SCORE]!" />
 
     <ImageView
         android:id="@+id/victorySticker"
@@ -28,8 +28,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/chooseAnotherGame"
         android:layout_alignEnd="@+id/victorySticker"
-        android:paddingBottom="15dp"
         android:onClick="playAgain"
+        android:paddingBottom="15dp"
         android:text="Play Again" />
 
     <Button
@@ -38,8 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:paddingBottom="15dp"
         android:onClick="chooseAnotherGame"
+        android:paddingBottom="15dp"
         android:text="Choose Another Game" />
 
 </RelativeLayout>
