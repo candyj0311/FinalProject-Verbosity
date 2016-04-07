@@ -41,4 +41,15 @@
         android:text="@string/settings"
         android:textSize="36sp" />
 
+    <Button
+        android:id="@+id/create_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settings_button"
+        android:layout_centerHorizontal="true"
+        android:onClick="createGame"
+        android:padding="20dp"
+        android:text="@string/create_game"
+        android:textSize="36sp" />
+
 </RelativeLayout>

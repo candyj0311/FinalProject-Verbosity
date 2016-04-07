@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         firebase.authWithPassword(email, password, new Firebase.AuthResultHandler() {
             @Override
             public void onAuthenticated(AuthData authData) {
-                Toast.makeText(LoginActivity.this, "You are logged in", Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, "We would not include login IRL, only in class", Toast.LENGTH_LONG).show();
                 finish();
             }
 

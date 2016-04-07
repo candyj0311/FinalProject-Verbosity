@@ -29,4 +29,9 @@ public class Home extends AppCompatActivity {
         // Go to Stickers page
         Toast.makeText(Home.this, "This is a possible enhancement", Toast.LENGTH_SHORT).show();
     }
+
+    public void createGame(View view) {
+        Intent intent = new Intent(Home.this, CreateGame.class);
+        startActivity(intent);
+    }
 }

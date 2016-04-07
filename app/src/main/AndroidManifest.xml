@@ -22,6 +22,7 @@
         <activity android:name=".CategoriesPage" />
         <activity android:name=".Games" />
         <activity android:name=".Results" />
+        <activity android:name=".CreateGame"></activity>
     </application>
 
 </manifest>
