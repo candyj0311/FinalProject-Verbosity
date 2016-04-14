@@ -18,7 +18,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".Home" />
         <activity android:name=".CategoriesPage" />
         <activity android:name=".Games" />
         <activity android:name=".Results" />

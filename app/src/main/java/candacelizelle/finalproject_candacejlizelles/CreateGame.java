@@ -81,7 +81,7 @@ public class CreateGame extends AppCompatActivity {
     }
 
     public void goHome(View view) {
-        Intent intent = new Intent(CreateGame.this, Home.class);
+        Intent intent = new Intent(CreateGame.this, MainActivity.class);
         startActivity(intent);
     }
 }
