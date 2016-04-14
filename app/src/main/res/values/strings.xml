@@ -13,4 +13,8 @@
     <string name="word4">Word 4</string>
     <string name="picture4">Picture 4</string>
     <string name="create_game">Create Game</string>
+    <string name="button_add_image_word1">Add Picture for Word 1</string>
+    <string name="button_add_image_word2">Add Picture for Word 2</string>
+    <string name="button_add_image_word3">Add Picture for Word 3</string>
+    <string name="button_add_image_word4">Add Picture for Word 4</string>
 </resources>
