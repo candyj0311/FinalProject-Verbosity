@@ -28,8 +28,8 @@ public class CategoriesPage extends AppCompatActivity {
 
     private void initialData() {
         categories = new ArrayList<>();
-        categories.add(new Category("Fruit", R.drawable.gamesclass));
-        categories.add(new Category("Animals", R.drawable.gamesclass));
-        categories.add(new Category("Places", R.drawable.gamesclass));
+        categories.add(new Category("Fruit", R.drawable.grapes));
+        categories.add(new Category("Animals", R.drawable.bear));
+        categories.add(new Category("Colors", R.drawable.gamesclass));
     }
 }
