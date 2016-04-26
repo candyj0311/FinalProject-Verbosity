@@ -22,7 +22,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginRight="16dp"
-            android:src="@drawable/gamesclass" />
+            android:src="@drawable/bear" />
 
         <TextView
             android:id="@+id/category_name"

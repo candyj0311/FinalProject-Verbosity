@@ -49,18 +49,6 @@
         android:text="@string/stickers"
         android:textSize="28sp" />
 
-    <Button
-        android:id="@+id/settings_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/sticker_button"
-        android:layout_centerHorizontal="true"
-        android:onClick="changeSettings"
-        android:padding="20dp"
-        android:text="@string/settings"
-        android:textSize="28sp" />
-
-
     <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -86,19 +74,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="writeToCloud"
-        android:text="Write to Cloud" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:onClick="readFromCloud"
-        android:text="Read from Cloud" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="goHome"
-        android:text="Go to Home Page" />-->
+        android:text="Read from Cloud" /> -->
 
 </RelativeLayout>

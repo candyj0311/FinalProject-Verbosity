@@ -49,11 +49,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void changeSettings(View view) {
-        // Go to Settings page
-        Toast.makeText(MainActivity.this, "We'll ask Xi Wei about this stuff", Toast.LENGTH_SHORT).show();
-    }
-
     public void showStickers(View view) {
         // Go to Stickers page
         Toast.makeText(MainActivity.this, "This is a possible enhancement", Toast.LENGTH_SHORT).show();
@@ -64,11 +59,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public void writeToCloud(View view) {
-//        if (userRef != null)
-//            userRef.child(keyEditText.getText().toString()).setValue(valueEditText.getText().toString());
-//    }
-//
 //    public void readFromCloud(View view) {
 //        if (userRef == null) return;
 //        userRef.child(keyEditText.getText().toString()).addValueEventListener(new ValueEventListener() {
@@ -120,8 +110,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    public void goHome(View view) {
-//        Intent intent = new Intent(MainActivity.this, Home.class);
-//        startActivity(intent);
-//    }
 }
