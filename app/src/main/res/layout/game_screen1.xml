@@ -11,43 +11,44 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
-        android:text="Apple"
+        android:text=" "
         android:onClick="playAudio" />
 
     <ImageButton
         android:id="@+id/topLeft"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/word"
-        android:layout_margin="50dp"
-        android:src="@drawable/apple" />
+        android:layout_margin="20dp"
+        android:src="@drawable/apple"
+        android:onClick="button1Pressed" />
 
     <ImageButton
         android:id="@+id/topRight"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/word"
-        android:layout_margin="50dp"
+        android:layout_margin="20dp"
         android:src="@drawable/apple" />
 
     <ImageButton
         android:id="@+id/bottomLeft"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/topLeft"
-        android:layout_margin="50dp"
+        android:layout_margin="20dp"
         android:src="@drawable/apple" />
 
     <ImageButton
         android:id="@+id/bottomRight"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/topRight"
-        android:layout_margin="50dp"
+        android:layout_margin="20dp"
         android:src="@drawable/apple" />
 
     <Button
