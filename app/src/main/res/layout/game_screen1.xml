@@ -11,8 +11,11 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
+        android:background="#FFFF6D00"
+        android:onClick="playAudio"
+        android:padding="20dp"
         android:text=" "
-        android:onClick="playAudio" />
+        android:textColor="#FFFFFF" />
 
     <ImageButton
         android:id="@+id/topLeft"
@@ -21,8 +24,8 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/word"
         android:layout_margin="20dp"
-        android:src="@drawable/apple"
-        android:onClick="topLeftPressed" />
+        android:onClick="topLeftPressed"
+        android:src="@drawable/apple" />
 
     <ImageButton
         android:id="@+id/topRight"
@@ -57,7 +60,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/bottomRight"
         android:layout_centerHorizontal="true"
+        android:background="#FF00BCD4"
         android:onClick="showResults"
-        android:text="Go To Results" />
+        android:padding="20dp"
+        android:text="Go To Results"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>
