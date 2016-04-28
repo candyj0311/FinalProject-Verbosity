@@ -23,6 +23,7 @@ public class Games extends AppCompatActivity {
     private ImageButton bottomLeft;
     private ImageButton bottomRight;
     private Question q1;
+    private int score = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,10 @@ public class Games extends AppCompatActivity {
     public void chooseGame() {
         if (categoryName.equals("Fruit")) {
             word1.setText("banana");
+            topLeft.setImageResource(R.drawable.apple);
+            topRight.setImageResource(R.drawable.banana);
+            bottomLeft.setImageResource(R.drawable.orange);
+            bottomRight.setImageResource(R.drawable.strawberry);
         } else if (categoryName.equals("Animals")) {
             readAnimalData(); // method I created below to read Firebase test data
             topLeft.setImageResource(R.drawable.cat);
@@ -60,13 +65,20 @@ public class Games extends AppCompatActivity {
             bottomLeft.setImageResource(R.drawable.squirrel);
             bottomRight.setImageResource(R.drawable.rabbit);
         } else if (categoryName.equals("Colors")) {
-            word1.setText("orange");
+            word1.setText("red");
+            topLeft.setImageResource(R.drawable.blue);
+            topRight.setImageResource(R.drawable.red);
+            bottomLeft.setImageResource(R.drawable.green);
+            bottomRight.setImageResource(R.drawable.yellow);
         } else {
             word1.setText("Something went wrong");
         }
     }
 
     //We need to add a counter for the scoring
+    public void addPoint() {
+        score++;
+    }
 
     public void showResults(View view) {
         Intent intent = new Intent(Games.this, Results.class);
@@ -141,8 +153,9 @@ public class Games extends AppCompatActivity {
         });
     }
 
-    public void button1Pressed(View view) {
-        Toast.makeText(this, "This is a test", Toast.LENGTH_SHORT);
+    public void topLeftPressed(View view) {
+        Toast.makeText(this, "X", Toast.LENGTH_SHORT).show();
+
         // Test to use our actual info
         Firebase messagesRef = ref.child("Category/Tests"); // this was the test Xi created in class
         messagesRef.addChildEventListener(new ChildEventListener() {

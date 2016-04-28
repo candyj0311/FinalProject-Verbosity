@@ -22,7 +22,7 @@
         android:layout_below="@+id/word"
         android:layout_margin="20dp"
         android:src="@drawable/apple"
-        android:onClick="button1Pressed" />
+        android:onClick="topLeftPressed" />
 
     <ImageButton
         android:id="@+id/topRight"
