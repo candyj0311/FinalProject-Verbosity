@@ -23,7 +23,7 @@ public class Games extends AppCompatActivity {
     private ImageButton bottomLeft;
     private ImageButton bottomRight;
     private Question q1;
-    private int score = 0;
+    public Score finalScore;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,8 +46,6 @@ public class Games extends AppCompatActivity {
         bottomRight = (ImageButton) findViewById(R.id.bottomRight);
 
         chooseGame(); // method below to display different content depending on category chosen
-
-
     }
 
     // Get game content - successfully changed words depending on Category chosen, now need to read content from Firebase
@@ -75,9 +73,10 @@ public class Games extends AppCompatActivity {
         }
     }
 
-    //We need to add a counter for the scoring
-    public void addPoint() {
-        score++;
+    // We need to add a counter for the scoring -- FIX THIS! Should pass an intent to the results page
+    public void setScore() {
+        finalScore = new Score(0);
+        finalScore.addPoint();
     }
 
     public void showResults(View view) {
@@ -155,6 +154,7 @@ public class Games extends AppCompatActivity {
 
     public void topLeftPressed(View view) {
         Toast.makeText(this, "X", Toast.LENGTH_SHORT).show();
+        word1.setText("new word"); // test to change word when a button is pressed
 
         // Test to use our actual info
         Firebase messagesRef = ref.child("Category/Tests"); // this was the test Xi created in class

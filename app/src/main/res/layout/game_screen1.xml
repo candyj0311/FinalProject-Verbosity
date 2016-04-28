@@ -13,9 +13,10 @@
         android:layout_margin="10dp"
         android:background="#FFFF6D00"
         android:onClick="playAudio"
-        android:padding="20dp"
+        android:padding="10dp"
         android:text=" "
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:textSize="28sp" />
 
     <ImageButton
         android:id="@+id/topLeft"
@@ -62,8 +63,9 @@
         android:layout_centerHorizontal="true"
         android:background="#FF00BCD4"
         android:onClick="showResults"
-        android:padding="20dp"
+        android:padding="10dp"
         android:text="Go To Results"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
 
 </RelativeLayout>

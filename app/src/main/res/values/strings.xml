@@ -17,4 +17,7 @@
     <string name="button_add_image_word2">Add Picture for Word 2</string>
     <string name="button_add_image_word3">Add Picture for Word 3</string>
     <string name="button_add_image_word4">Add Picture for Word 4</string>
+    <string name="perfect">Perfect!</string>
+    <string name="great_job">Great job!</string>
+    <string name="keep_trying">Keep trying!</string>
 </resources>

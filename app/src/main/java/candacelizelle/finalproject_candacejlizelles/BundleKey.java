@@ -5,4 +5,5 @@ public interface BundleKey {
     String NAME_KEY = "Category Name";
     String PHOTO_KEY = "photo";
     int IMAGE_KEY = 0;
+    int SCORE_KEY = 0;
 }
