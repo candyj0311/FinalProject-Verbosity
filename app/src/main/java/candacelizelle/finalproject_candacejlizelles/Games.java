@@ -3,20 +3,16 @@ package candacelizelle.finalproject_candacejlizelles;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
 
 public class Games extends AppCompatActivity {
     private String categoryName;
-    private TextView word1;
+    private TextView word;
     Firebase ref;
     private ImageButton topLeft;
     private ImageButton topRight;
@@ -24,6 +20,8 @@ public class Games extends AppCompatActivity {
     private ImageButton bottomRight;
     private Question q1;
     public Score finalScore;
+    private String word1;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,8 +34,7 @@ public class Games extends AppCompatActivity {
         categoryName = getIntent().getStringExtra(BundleKey.NAME_KEY);
         setTitle(categoryName);
 
-        // Repeat this process for words 2-4
-        word1 = (TextView) findViewById(R.id.word);
+        word = (TextView) findViewById(R.id.word);
 
         // ImageButtons
         topLeft = (ImageButton) findViewById(R.id.topLeft);
@@ -46,37 +43,43 @@ public class Games extends AppCompatActivity {
         bottomRight = (ImageButton) findViewById(R.id.bottomRight);
 
         chooseGame(); // method below to display different content depending on category chosen
+        setScore();
     }
 
     // Get game content - successfully changed words depending on Category chosen, now need to read content from Firebase
     public void chooseGame() {
         if (categoryName.equals("Fruit")) {
-            word1.setText("banana");
+            word1 = "banana";
+            word.setText(word1);
+
             topLeft.setImageResource(R.drawable.apple);
             topRight.setImageResource(R.drawable.banana);
             bottomLeft.setImageResource(R.drawable.orange);
             bottomRight.setImageResource(R.drawable.strawberry);
         } else if (categoryName.equals("Animals")) {
-            readAnimalData(); // method I created below to read Firebase test data
+            word1 = "dog";
+            word.setText(word1);
+
             topLeft.setImageResource(R.drawable.cat);
             topRight.setImageResource(R.drawable.dog);
             bottomLeft.setImageResource(R.drawable.squirrel);
             bottomRight.setImageResource(R.drawable.rabbit);
         } else if (categoryName.equals("Colors")) {
-            word1.setText("red");
+            word1 = "red";
+            word.setText(word1);
+
             topLeft.setImageResource(R.drawable.blue);
             topRight.setImageResource(R.drawable.red);
             bottomLeft.setImageResource(R.drawable.green);
             bottomRight.setImageResource(R.drawable.yellow);
         } else {
-            word1.setText("Something went wrong");
+            word.setText("Something went wrong");
         }
     }
 
     // We need to add a counter for the scoring -- FIX THIS! Should pass an intent to the results page
     public void setScore() {
         finalScore = new Score(0);
-        finalScore.addPoint();
     }
 
     public void showResults(View view) {
@@ -84,108 +87,111 @@ public class Games extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void readAnimalData() {
-        Firebase messagesRef = ref.child("Category/TestAnimals/"); // another test copying Xi's code
-        messagesRef.addChildEventListener(new ChildEventListener() {
+//    public void readAnimalData() {
+//        Firebase messagesRef = ref.child("Category/TestAnimals/"); // another test copying Xi's code
+//        messagesRef.addChildEventListener(new ChildEventListener() {
+//            @Override
+//            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+//                Object obj = dataSnapshot.getValue();
+//                q1 = dataSnapshot.getValue(Question.class);
+//                // Log.d("xizz", q1.question);
+//                // Word w = q1.words.get("w1");
+//                word.setText(q1.question);
+//            }
+//
+//            @Override
+//            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+//
+//            }
+//
+//            @Override
+//            public void onChildRemoved(DataSnapshot dataSnapshot) {
+//
+//            }
+//
+//            @Override
+//            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(FirebaseError firebaseError) {
+//
+//            }
+//        });
+//    }
+//
+//    public void playAudio(View view) {
+//        Firebase messagesRef = ref.child("Category/Tests"); // this was the test Xi created in class
+//        messagesRef.addChildEventListener(new ChildEventListener() {
+//            @Override
+//            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+//                Object obj = dataSnapshot.getValue();
+//                q1 = dataSnapshot.getValue(Question.class);
+//                Log.d("xizz", q1.question);
+//                Word w = q1.words.get("w1");
+//                word.setText(q1.question);
+//            }
+//
+//            @Override
+//            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+//
+//            }
+//
+//            @Override
+//            public void onChildRemoved(DataSnapshot dataSnapshot) {
+//
+//            }
+//
+//            @Override
+//            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(FirebaseError firebaseError) {
+//
+//            }
+//        });
+//    }
+
+    public void incorrectAnswer(View view) {
+        Toast.makeText(this, "Try again!", Toast.LENGTH_SHORT).show();
+        // this allows users to have one more try – otherwise, nothing will happen until you click the correct answer. Could eliminate need for scoring
+        topLeft.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Object obj = dataSnapshot.getValue();
-                q1 = dataSnapshot.getValue(Question.class);
-                // Log.d("xizz", q1.question);
-                // Word w = q1.words.get("w1");
-                word1.setText(q1.question);
+            public void onClick(View v) {
+                Intent intent = new Intent(Games.this, Games2.class);
+                intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                startActivity(intent);
             }
-
+        });
+        bottomLeft.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
+            public void onClick(View v) {
+                Intent intent = new Intent(Games.this, Games2.class);
+                intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                startActivity(intent);
             }
-
+        });
+        bottomRight.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
+            public void onClick(View v) {
+                Intent intent = new Intent(Games.this, Games2.class);
+                intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                startActivity(intent);
             }
         });
     }
 
-    public void playAudio(View view) {
-        Firebase messagesRef = ref.child("Category/Tests"); // this was the test Xi created in class
-        messagesRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Object obj = dataSnapshot.getValue();
-                q1 = dataSnapshot.getValue(Question.class);
-                Log.d("xizz", q1.question);
-                Word w = q1.words.get("w1");
-                word1.setText(q1.question);
-            }
+    public void correctAnswer(View view) {
+        finalScore.addPoint();
+        finalScore.getScore();
 
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-        });
-    }
-
-    public void topLeftPressed(View view) {
-        Toast.makeText(this, "X", Toast.LENGTH_SHORT).show();
-        word1.setText("new word"); // test to change word when a button is pressed
-
-        // Test to use our actual info
-        Firebase messagesRef = ref.child("Category/Tests"); // this was the test Xi created in class
-        messagesRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Object obj = dataSnapshot.getValue();
-                Question question = dataSnapshot.getValue(Question.class);
-                Log.d("xizz", question.question);
-                Word w = question.words.get("w1");
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-        });
+        Toast.makeText(this, ":)", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Games.this, Games2.class);
+        intent.putExtra(BundleKey.NAME_KEY, categoryName);
+        startActivity(intent);
     }
 }
+

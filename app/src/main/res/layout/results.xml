@@ -21,7 +21,7 @@
         android:layout_below="@+id/score"
         android:layout_centerHorizontal="true"
         android:paddingTop="20dp"
-        android:text="Good job!" />
+        android:text="@string/great_job" />
 
     <ImageView
         android:id="@+id/victorySticker"

@@ -24,7 +24,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/word"
         android:layout_margin="20dp"
-        android:onClick="incorrectAnswer"
+        android:onClick="correctAnswer"
         android:src="@drawable/apple" />
 
     <ImageButton
@@ -34,7 +34,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/word"
         android:layout_margin="20dp"
-        android:onClick="correctAnswer"
+        android:onClick="incorrectAnswer"
         android:src="@drawable/apple" />
 
     <ImageButton
