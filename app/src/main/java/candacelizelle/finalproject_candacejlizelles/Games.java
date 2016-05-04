@@ -1,6 +1,7 @@
 package candacelizelle.finalproject_candacejlizelles;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -20,11 +21,13 @@ public class Games extends AppCompatActivity {
     private TextView displayScore;
     private String word1;
 
+    MediaPlayer wordAudio;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_screen1);
+        wordAudio = MediaPlayer.create(this, R.raw.banana);
 
         // ref = new Firebase("https://finalprojectcjls.firebaseio.com/");
 
@@ -44,6 +47,10 @@ public class Games extends AppCompatActivity {
         displayScore.setText("Score: " + score);
 
         chooseGame(); // method below to display different content depending on category chosen
+    }
+
+    public void playAudio(View view) {
+        wordAudio.start();
     }
 
     // Get game content - successfully changed words depending on Category chosen, now need to read content from Firebase
