@@ -15,7 +15,7 @@ public class Games4 extends AppCompatActivity {
     private ImageButton topRight;
     private ImageButton bottomLeft;
     private ImageButton bottomRight;
-    public Score finalScore;
+    public int score4;
     private String word4;
 
 
@@ -26,6 +26,7 @@ public class Games4 extends AppCompatActivity {
 
         Intent intent = getIntent();
         categoryName = getIntent().getStringExtra(BundleKey.NAME_KEY);
+        score4 = intent.getIntExtra("score", 0);
         setTitle(categoryName);
 
         word = (TextView) findViewById(R.id.word);
@@ -37,7 +38,6 @@ public class Games4 extends AppCompatActivity {
         bottomRight = (ImageButton) findViewById(R.id.bottomRight);
 
         chooseGame(); // method below to display different content depending on category chosen
-        setScore();
     }
 
     // Get game content - successfully changed words depending on Category chosen, now need to read content from Firebase
@@ -64,20 +64,15 @@ public class Games4 extends AppCompatActivity {
 
             topLeft.setImageResource(R.drawable.green);
             topRight.setImageResource(R.drawable.red);
-            bottomLeft.setImageResource(R.drawable.yellow);
+            bottomLeft.setImageResource(R.drawable.blue);
             bottomRight.setImageResource(R.drawable.yellow);
         } else {
             word.setText("Something went wrong");
         }
     }
 
-    // We need to add a counter for the scoring -- FIX THIS! Should pass an intent to the results page
-    public void setScore() {
-        finalScore = new Score(0);
-    }
-
-    public void showResults(View view) {
-        Intent intent = new Intent(Games4.this, Results.class);
+    public void quitGame(View view) {
+        Intent intent = new Intent(Games4.this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -89,6 +84,7 @@ public class Games4 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Games4.this, Results.class);
                 intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                intent.putExtra("score", score4);
                 startActivity(intent);
             }
         });
@@ -97,6 +93,7 @@ public class Games4 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Games4.this, Results.class);
                 intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                intent.putExtra("score", score4);
                 startActivity(intent);
             }
         });
@@ -105,6 +102,7 @@ public class Games4 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Games4.this, Results.class);
                 intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                intent.putExtra("score", score4);
                 startActivity(intent);
             }
         });
@@ -112,8 +110,11 @@ public class Games4 extends AppCompatActivity {
 
     public void correctAnswer(View view) {
         Toast.makeText(this, ":)", Toast.LENGTH_SHORT).show();
+        score4++;
+
         Intent intent = new Intent(Games4.this, Results.class);
         intent.putExtra(BundleKey.NAME_KEY, categoryName);
+        intent.putExtra("score", score4);
         startActivity(intent);
     }
 }

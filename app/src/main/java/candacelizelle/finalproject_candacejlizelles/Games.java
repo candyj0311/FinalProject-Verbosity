@@ -8,18 +8,15 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.firebase.client.Firebase;
-
 public class Games extends AppCompatActivity {
     private String categoryName;
     private TextView word;
-    Firebase ref;
+    // Firebase ref;
     private ImageButton topLeft;
     private ImageButton topRight;
     private ImageButton bottomLeft;
     private ImageButton bottomRight;
-    private Question q1;
-    public Score finalScore;
+    public int score = 0;
     private String word1;
 
 
@@ -28,7 +25,7 @@ public class Games extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_screen1);
 
-        ref = new Firebase("https://finalprojectcjls.firebaseio.com/");
+        // ref = new Firebase("https://finalprojectcjls.firebaseio.com/");
 
         Intent intent = getIntent();
         categoryName = getIntent().getStringExtra(BundleKey.NAME_KEY);
@@ -43,7 +40,6 @@ public class Games extends AppCompatActivity {
         bottomRight = (ImageButton) findViewById(R.id.bottomRight);
 
         chooseGame(); // method below to display different content depending on category chosen
-        setScore();
     }
 
     // Get game content - successfully changed words depending on Category chosen, now need to read content from Firebase
@@ -77,13 +73,8 @@ public class Games extends AppCompatActivity {
         }
     }
 
-    // We need to add a counter for the scoring -- FIX THIS! Should pass an intent to the results page
-    public void setScore() {
-        finalScore = new Score(0);
-    }
-
-    public void showResults(View view) {
-        Intent intent = new Intent(Games.this, Results.class);
+    public void quitGame(View view) {
+        Intent intent = new Intent(Games.this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -163,6 +154,7 @@ public class Games extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Games.this, Games2.class);
                 intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                intent.putExtra("score", score);
                 startActivity(intent);
             }
         });
@@ -171,6 +163,7 @@ public class Games extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Games.this, Games2.class);
                 intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                intent.putExtra("score", score);
                 startActivity(intent);
             }
         });
@@ -179,18 +172,19 @@ public class Games extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Games.this, Games2.class);
                 intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                intent.putExtra("score", score);
                 startActivity(intent);
             }
         });
     }
 
     public void correctAnswer(View view) {
-        finalScore.addPoint();
-        finalScore.getScore();
+        score = 1;
 
         Toast.makeText(this, ":)", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(Games.this, Games2.class);
         intent.putExtra(BundleKey.NAME_KEY, categoryName);
+        intent.putExtra("score", score);
         startActivity(intent);
     }
 }

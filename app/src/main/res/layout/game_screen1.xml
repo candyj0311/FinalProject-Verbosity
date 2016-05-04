@@ -64,9 +64,9 @@
         android:layout_below="@id/bottomRight"
         android:layout_centerHorizontal="true"
         android:background="#FF00BCD4"
-        android:onClick="showResults"
+        android:onClick="quitGame"
         android:padding="10dp"
-        android:text="Go To Results"
+        android:text="@string/quit_game"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
