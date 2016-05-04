@@ -6,12 +6,12 @@
 
     <TextView
         android:id="@+id/score"
-        style="@android:style/TextAppearance.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:paddingTop="40dp"
+        android:textSize="32sp"
         android:text="You got [DISPLAY SCORE]!" />
 
     <TextView
@@ -21,12 +21,13 @@
         android:layout_below="@+id/score"
         android:layout_centerHorizontal="true"
         android:paddingTop="20dp"
+        android:textSize="28sp"
         android:text="@string/great_job" />
 
     <ImageView
         android:id="@+id/victorySticker"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:src="@drawable/star" />

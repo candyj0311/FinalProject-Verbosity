@@ -11,6 +11,7 @@
 
     <ImageView
         android:id="@+id/logo"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -22,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/logo"
         android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:background="#FFFF6D00"
         android:onClick="playGame"
         android:padding="20dp"

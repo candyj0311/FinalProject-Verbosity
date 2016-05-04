@@ -57,11 +57,20 @@
         android:onClick="correctAnswer"
         android:src="@drawable/apple" />
 
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bottomLeft"
+        android:layout_centerInParent="true"
+        android:text="Score: "
+        android:textSize="20sp" />
+
     <Button
         android:id="@+id/resultsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/bottomRight"
+        android:layout_below="@id/score"
         android:layout_centerHorizontal="true"
         android:background="#FF00BCD4"
         android:onClick="quitGame"

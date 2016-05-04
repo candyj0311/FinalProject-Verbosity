@@ -16,6 +16,7 @@ public class Games2 extends AppCompatActivity {
     private ImageButton bottomLeft;
     private ImageButton bottomRight;
     public int score2;
+    private TextView displayScore;
     private String word2;
 
 
@@ -37,6 +38,9 @@ public class Games2 extends AppCompatActivity {
         topRight = (ImageButton) findViewById(R.id.topRight);
         bottomLeft = (ImageButton) findViewById(R.id.bottomLeft);
         bottomRight = (ImageButton) findViewById(R.id.bottomRight);
+
+        displayScore = (TextView) findViewById(R.id.score);
+        displayScore.setText("Score: " + score2);
 
         chooseGame(); // method below to display different content depending on category chosen
     }
