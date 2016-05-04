@@ -1,6 +1,7 @@
 package candacelizelle.finalproject_candacejlizelles;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -19,6 +20,7 @@ public class Games4 extends AppCompatActivity {
     private TextView displayScore;
     private String word4;
 
+    MediaPlayer wordAudio;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class Games4 extends AppCompatActivity {
         if (categoryName.equals("Fruit")) {
             word4 = "strawberry";
             word.setText(word4);
+            wordAudio = MediaPlayer.create(this, R.raw.strawberry);
 
             topLeft.setImageResource(R.drawable.banana);
             topRight.setImageResource(R.drawable.apple);
@@ -56,6 +59,7 @@ public class Games4 extends AppCompatActivity {
         } else if (categoryName.equals("Animals")) {
             word4 = "squirrel";
             word.setText(word4);
+            wordAudio = MediaPlayer.create(this, R.raw.squirrel);
 
             topLeft.setImageResource(R.drawable.cat);
             topRight.setImageResource(R.drawable.rabbit);
@@ -64,6 +68,7 @@ public class Games4 extends AppCompatActivity {
         } else if (categoryName.equals("Colors")) {
             word4 = "yellow";
             word.setText(word4);
+            wordAudio = MediaPlayer.create(this, R.raw.yellow);
 
             topLeft.setImageResource(R.drawable.green);
             topRight.setImageResource(R.drawable.red);
@@ -72,6 +77,10 @@ public class Games4 extends AppCompatActivity {
         } else {
             word.setText("Something went wrong");
         }
+    }
+
+    public void playAudioFour(View view) {
+        wordAudio.start();
     }
 
     public void quitGame(View view) {

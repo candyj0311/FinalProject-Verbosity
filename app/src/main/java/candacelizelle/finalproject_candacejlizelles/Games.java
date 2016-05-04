@@ -27,7 +27,6 @@ public class Games extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_screen1);
-        wordAudio = MediaPlayer.create(this, R.raw.banana);
 
         // ref = new Firebase("https://finalprojectcjls.firebaseio.com/");
 
@@ -49,15 +48,12 @@ public class Games extends AppCompatActivity {
         chooseGame(); // method below to display different content depending on category chosen
     }
 
-    public void playAudio(View view) {
-        wordAudio.start();
-    }
-
     // Get game content - successfully changed words depending on Category chosen, now need to read content from Firebase
     public void chooseGame() {
         if (categoryName.equals("Fruit")) {
             word1 = "banana";
             word.setText(word1);
+            wordAudio = MediaPlayer.create(this, R.raw.banana);
 
             topLeft.setImageResource(R.drawable.apple);
             topRight.setImageResource(R.drawable.banana);
@@ -66,6 +62,7 @@ public class Games extends AppCompatActivity {
         } else if (categoryName.equals("Animals")) {
             word1 = "dog";
             word.setText(word1);
+            wordAudio = MediaPlayer.create(this, R.raw.dog);
 
             topLeft.setImageResource(R.drawable.cat);
             topRight.setImageResource(R.drawable.dog);
@@ -74,6 +71,7 @@ public class Games extends AppCompatActivity {
         } else if (categoryName.equals("Colors")) {
             word1 = "red";
             word.setText(word1);
+            wordAudio = MediaPlayer.create(this, R.raw.red);
 
             topLeft.setImageResource(R.drawable.blue);
             topRight.setImageResource(R.drawable.red);
@@ -82,6 +80,10 @@ public class Games extends AppCompatActivity {
         } else {
             word.setText("Something went wrong");
         }
+    }
+
+    public void playAudio(View view) {
+        wordAudio.start();
     }
 
     public void quitGame(View view) {

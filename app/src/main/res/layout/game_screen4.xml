@@ -15,7 +15,8 @@
         android:padding="10dp"
         android:text=" "
         android:textColor="#FFFFFF"
-        android:textSize="28sp" />
+        android:textSize="28sp"
+        android:onClick="playAudioFour" />/>
 
     <ImageButton
         android:id="@+id/topLeft"

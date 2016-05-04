@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://finalprojectcjls.firebaseio.com");
 
+/*
         authStateListener = new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+*/
     }
 
     public void playGame(View view) {
@@ -52,11 +53,6 @@ public class MainActivity extends AppCompatActivity {
     public void showStickers(View view) {
         // Go to Stickers page
         Toast.makeText(MainActivity.this, "This is a possible enhancement", Toast.LENGTH_SHORT).show();
-    }
-
-    public void createGame(View view) {
-        Intent intent = new Intent(MainActivity.this, CreateGame.class);
-        startActivity(intent);
     }
 
 //    public void readFromCloud(View view) {

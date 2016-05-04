@@ -31,18 +31,18 @@
         android:textColor="#FFFFFF"
         android:textSize="36sp" />
 
-    <Button
-        android:id="@+id/create_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/play_button"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:background="#FF00BCD4"
-        android:onClick="createGame"
-        android:padding="20dp"
-        android:text="@string/create_game"
-        android:textColor="#FFFFFF"
-        android:textSize="28sp" />
+    <!-- <Button
+         android:id="@+id/create_button"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/play_button"
+         android:layout_centerHorizontal="true"
+         android:layout_margin="10dp"
+         android:background="#FF00BCD4"
+         android:onClick="createGame"
+         android:padding="20dp"
+         android:text="@string/create_game"
+         android:textColor="#FFFFFF"
+         android:textSize="28sp" />-->
 
 </RelativeLayout>
