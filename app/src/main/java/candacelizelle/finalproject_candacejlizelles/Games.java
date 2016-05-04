@@ -148,7 +148,7 @@ public class Games extends AppCompatActivity {
 
     public void incorrectAnswer(View view) {
         Toast.makeText(this, "Try again!", Toast.LENGTH_SHORT).show();
-        // this allows users to have one more try – otherwise, nothing will happen until you click the correct answer. Could eliminate need for scoring
+        // this allows users to have one more try
         topLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
