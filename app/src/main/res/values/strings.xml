@@ -20,4 +20,7 @@
     <string name="perfect">Perfect!</string>
     <string name="great_job">Great job!</string>
     <string name="keep_trying">Keep trying!</string>
+    <string name="quit_game">Quit game</string>
+    <string name="play_again">Play again</string>
+    <string name="another_game">Choose another category</string>
 </resources>

@@ -15,7 +15,7 @@ public class Games3 extends AppCompatActivity {
     private ImageButton topRight;
     private ImageButton bottomLeft;
     private ImageButton bottomRight;
-    public Score finalScore;
+    public int score3;
     private String word3;
 
 
@@ -26,6 +26,7 @@ public class Games3 extends AppCompatActivity {
 
         Intent intent = getIntent();
         categoryName = getIntent().getStringExtra(BundleKey.NAME_KEY);
+        score3 = intent.getIntExtra("score", 0);
         setTitle(categoryName);
 
         word = (TextView) findViewById(R.id.word);
@@ -37,7 +38,6 @@ public class Games3 extends AppCompatActivity {
         bottomRight = (ImageButton) findViewById(R.id.bottomRight);
 
         chooseGame(); // method below to display different content depending on category chosen
-        setScore();
     }
 
     // Get game content - successfully changed words depending on Category chosen, now need to read content from Firebase
@@ -71,24 +71,20 @@ public class Games3 extends AppCompatActivity {
         }
     }
 
-    // We need to add a counter for the scoring -- FIX THIS! Should pass an intent to the results page
-    public void setScore() {
-        finalScore = new Score(0);
-    }
-
-    public void showResults(View view) {
-        Intent intent = new Intent(Games3.this, Results.class);
+    public void quitGame(View view) {
+        Intent intent = new Intent(Games3.this, MainActivity.class);
         startActivity(intent);
     }
 
     public void incorrectAnswer(View view) {
         Toast.makeText(this, "Try again!", Toast.LENGTH_SHORT).show();
         // this allows users to have one more try – otherwise, nothing will happen until you click the correct answer. Could eliminate need for scoring
-        topLeft.setOnClickListener(new View.OnClickListener() {
+        topRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Games3.this, Games4.class);
                 intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                intent.putExtra("score", score3);
                 startActivity(intent);
             }
         });
@@ -97,6 +93,7 @@ public class Games3 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Games3.this, Games4.class);
                 intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                intent.putExtra("score", score3);
                 startActivity(intent);
             }
         });
@@ -105,6 +102,7 @@ public class Games3 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Games3.this, Games4.class);
                 intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                intent.putExtra("score", score3);
                 startActivity(intent);
             }
         });
@@ -112,8 +110,11 @@ public class Games3 extends AppCompatActivity {
 
     public void correctAnswer(View view) {
         Toast.makeText(this, ":)", Toast.LENGTH_SHORT).show();
+        score3++;
+
         Intent intent = new Intent(Games3.this, Games4.class);
         intent.putExtra(BundleKey.NAME_KEY, categoryName);
+        intent.putExtra("score", score3);
         startActivity(intent);
     }
 }

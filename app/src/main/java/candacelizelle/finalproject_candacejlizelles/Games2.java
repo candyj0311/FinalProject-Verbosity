@@ -15,7 +15,7 @@ public class Games2 extends AppCompatActivity {
     private ImageButton topRight;
     private ImageButton bottomLeft;
     private ImageButton bottomRight;
-    public Score finalScore;
+    public int score2;
     private String word2;
 
 
@@ -26,6 +26,8 @@ public class Games2 extends AppCompatActivity {
 
         Intent intent = getIntent();
         categoryName = getIntent().getStringExtra(BundleKey.NAME_KEY);
+        score2 = intent.getIntExtra("score", 0);
+
         setTitle(categoryName);
 
         word = (TextView) findViewById(R.id.word);
@@ -70,14 +72,8 @@ public class Games2 extends AppCompatActivity {
         }
     }
 
-    // We need to add a counter for the scoring -- FIX THIS! Should pass an intent to the results page
-    public void setScore() {
-        finalScore = new Score(0);
-        finalScore.addPoint();
-    }
-
-    public void showResults(View view) {
-        Intent intent = new Intent(Games2.this, Results.class);
+    public void quitGame(View view) {
+        Intent intent = new Intent(Games2.this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -88,6 +84,25 @@ public class Games2 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Games2.this, Games3.class);
                 intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                intent.putExtra("score", score2);
+                startActivity(intent);
+            }
+        });
+        topRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Games2.this, Games3.class);
+                intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                intent.putExtra("score", score2);
+                startActivity(intent);
+            }
+        });
+        bottomLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Games2.this, Games3.class);
+                intent.putExtra(BundleKey.NAME_KEY, categoryName);
+                intent.putExtra("score", score2);
                 startActivity(intent);
             }
         });
@@ -95,8 +110,11 @@ public class Games2 extends AppCompatActivity {
 
     public void correctAnswer(View view) {
         Toast.makeText(this, ":)", Toast.LENGTH_SHORT).show();
+        score2++;
+
         Intent intent = new Intent(Games2.this, Games3.class);
         intent.putExtra(BundleKey.NAME_KEY, categoryName);
+        intent.putExtra("score", score2);
         startActivity(intent);
     }
 }
