@@ -41,7 +41,6 @@ public class Games2 extends AppCompatActivity {
         chooseGame(); // method below to display different content depending on category chosen
     }
 
-    // Get game content - successfully changed words depending on Category chosen, now need to read content from Firebase
     public void chooseGame() {
         if (categoryName.equals("Fruit")) {
             word2 = "apple";

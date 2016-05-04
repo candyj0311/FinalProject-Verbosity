@@ -9,12 +9,11 @@ import android.widget.TextView;
 
 public class Results extends AppCompatActivity {
     private String categoryName;
+    private String scoreResult;
     private TextView showScore;
     private TextView showMessage;
     private ImageView showSticker;
     public int score;
-    public Score finalScore;
-    public String numberAsString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,20 +29,17 @@ public class Results extends AppCompatActivity {
         showMessage = (TextView) findViewById(R.id.message);
         showSticker = (ImageView) findViewById(R.id.victorySticker);
 
-        finalScore = new Score(score);
-        numberAsString = String.valueOf(finalScore.getScore());
+        scoreResult = "You got " + score + "/4!";
+        showScore.setText(scoreResult);
 
         // Set message and sticker depending on score
-        if (finalScore.getScore() == 4) {
-            showScore.setText("You got " + numberAsString + "/4!");
+        if (score == 4) {
             showMessage.setText(R.string.perfect);
             showSticker.setImageResource(R.drawable.trophy);
-        } else if (finalScore.getScore() >= 3) {
-            showScore.setText("You got " + numberAsString + "/4!");
+        } else if (score >= 3) {
             showMessage.setText(R.string.great_job);
             showSticker.setImageResource(R.drawable.trophy);
-        } else if (finalScore.getScore() <= 2) {
-            showScore.setText("You got " + numberAsString + "/4");
+        } else if (score <= 2) {
             showMessage.setText(R.string.keep_trying);
             showSticker.setImageResource(R.drawable.star);
         }

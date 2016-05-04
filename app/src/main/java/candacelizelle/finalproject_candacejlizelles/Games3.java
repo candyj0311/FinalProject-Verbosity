@@ -40,7 +40,6 @@ public class Games3 extends AppCompatActivity {
         chooseGame(); // method below to display different content depending on category chosen
     }
 
-    // Get game content - successfully changed words depending on Category chosen, now need to read content from Firebase
     public void chooseGame() {
         if (categoryName.equals("Fruit")) {
             word3 = "orange";
@@ -78,7 +77,6 @@ public class Games3 extends AppCompatActivity {
 
     public void incorrectAnswer(View view) {
         Toast.makeText(this, "Try again!", Toast.LENGTH_SHORT).show();
-        // this allows users to have one more try – otherwise, nothing will happen until you click the correct answer. Could eliminate need for scoring
         topRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
