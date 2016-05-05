@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- We need to figure out how/where to add audio so it plays when this button is clicked.-->
     <Button
         android:id="@+id/word"
         android:layout_width="wrap_content"
