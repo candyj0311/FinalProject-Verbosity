@@ -11,11 +11,11 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
         android:background="#FFFF6D00"
+        android:onClick="playAudioTwo"
         android:padding="10dp"
         android:text=" "
         android:textColor="#FFFFFF"
-        android:textSize="28sp"
-        android:onClick="playAudioTwo" />
+        android:textSize="28sp" />
 
     <ImageButton
         android:id="@+id/topLeft"

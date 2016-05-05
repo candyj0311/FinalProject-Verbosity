@@ -12,7 +12,6 @@ import android.widget.Toast;
 public class Games extends AppCompatActivity {
     private String categoryName;
     private TextView word;
-    // Firebase ref;
     private ImageButton topLeft;
     private ImageButton topRight;
     private ImageButton bottomLeft;
@@ -90,74 +89,6 @@ public class Games extends AppCompatActivity {
         Intent intent = new Intent(Games.this, MainActivity.class);
         startActivity(intent);
     }
-
-//    public void readAnimalData() {
-//        Firebase messagesRef = ref.child("Category/TestAnimals/"); // another test copying Xi's code
-//        messagesRef.addChildEventListener(new ChildEventListener() {
-//            @Override
-//            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-//                Object obj = dataSnapshot.getValue();
-//                q1 = dataSnapshot.getValue(Question.class);
-//                // Log.d("xizz", q1.question);
-//                // Word w = q1.words.get("w1");
-//                word.setText(q1.question);
-//            }
-//
-//            @Override
-//            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-//
-//            }
-//
-//            @Override
-//            public void onChildRemoved(DataSnapshot dataSnapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(FirebaseError firebaseError) {
-//
-//            }
-//        });
-//    }
-//
-//    public void playAudio(View view) {
-//        Firebase messagesRef = ref.child("Category/Tests"); // this was the test Xi created in class
-//        messagesRef.addChildEventListener(new ChildEventListener() {
-//            @Override
-//            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-//                Object obj = dataSnapshot.getValue();
-//                q1 = dataSnapshot.getValue(Question.class);
-//                Log.d("xizz", q1.question);
-//                Word w = q1.words.get("w1");
-//                word.setText(q1.question);
-//            }
-//
-//            @Override
-//            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-//
-//            }
-//
-//            @Override
-//            public void onChildRemoved(DataSnapshot dataSnapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(FirebaseError firebaseError) {
-//
-//            }
-//        });
-//    }
 
     public void incorrectAnswer(View view) {
         Toast.makeText(this, "Try again!", Toast.LENGTH_SHORT).show();
